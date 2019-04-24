@@ -1,0 +1,95 @@
+body {
+    font-family: 'Titillium Web', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(white 0%, white 50%, #21e6b8 50%, #21e6b8 100%);
+}
+
+.navigation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    transition: 0.5s;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0,0,0,.2);
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    width: 0;
+    overflow: hidden;
+    display: flex;
+    transition: 0.5s;
+}
+
+.navigation input:checked ~ .menu {
+    width: 400px;
+}
+
+.menu li {
+    list-style: none;
+    margin: 0 10px;
+
+}
+
+.menu li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #666;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.menu li a:hover {
+    color: #21e6b8;
+}
+
+.navigation input {
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.navigation span {
+    position: absolute;
+    left: 26px;
+    width: 32px;
+    height: 4px;
+    background: #666;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.navigation input:checked ~ span {
+    background: #e785c2;
+}
+
+.navigation span:nth-child(2) {
+    transform:  translateY(-8px);
+}
+
+.navigation input:checked ~ span:nth-child(4) {
+    opacity: 0;
+}
+
+.navigation input:checked ~ span:nth-child(2) {
+    transform: translateY(0) rotate(45deg);
+}
+
+.navigation span:nth-child(3) {
+    transform:  translateY(8px);
+}
+
+.navigation input:checked ~ span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
+}
